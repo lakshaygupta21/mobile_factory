@@ -12,7 +12,7 @@
   "tags": [
     {
       "name": "Components",
-      "description": "API for configuring mobile phones with components"
+      "description": "API for ordering custom configured mobile phones"
     }
   ],
   "consumes": [
