@@ -13,7 +13,7 @@ https://nodejs.org/en/download/current
 POST: `localhost:3000/orders`
 Example Request body:
 `{
-components: ["I", "A", "D", "F", "K"]
+"components": ["I", "A", "D", "F", "K"]
 }`
 
 7. Run `npx jest` to run unit tests
