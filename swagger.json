@@ -1,79 +1,81 @@
 {
-    "swagger": "2.0",
-    "info": {
-      "version": "1.0.0",
-      "title": "Fanztar Home Assignment",
-      "description": "Find out how your APIs work",
-      "license": {
-        "name": "MIT",
-        "url": "https://opensource.org/licenses/MIT"
-      }
-    },
-    "host": "localhost:3000",
-    "basePath": "/",
-    "tags": [
-      {
-        "name": "Components",
-        "description": "API for configuring mobile phones with components"
-      }
-
-    ],
-    "schemes": [
-      "http",
-      "https"
-    ],
-    "consumes": [
-      "application/json"
-    ],
-    "produces": [
-      "application/json"
-    ],
-    "paths": {
-      "/orders/": {
-        "post": {
-          "summary": "Create and validate a mobile order",
-          "tags": [
-            "Components"
-          ],
-          "description": "Create and validate a mobile order",
-          "parameters": [
-            {
-              "name": "components",
-              "in": "body",
-              "description": "components",
-              "schema": {
-                "$ref": "#/definitions/Components"
-              }
-            }
-          ],
-          "produces": [
-            "application/json"
-          ],
-          "responses": {
-            "200": {
-              "description": "Mobile order created successfully"
-            },
-            "400":{
-              "description": "Bad Request"
-            },
-            "500":{
-              "description": "Internal Server error"
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Fanztar Home Assignment",
+    "description": "Find out how your APIs work",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "tags": [
+    {
+      "name": "Components",
+      "description": "API for configuring mobile phones with components"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/orders/": {
+      "post": {
+        "summary": "Create and validate a mobile order",
+        "tags": [
+          "Components"
+        ],
+        "description": "Create and validate a mobile order",
+        "parameters": [
+          {
+            "name": "components",
+            "in": "body",
+            "description": "components",
+            "schema": {
+              "$ref": "#/definitions/Components"
             }
           }
-        }
-      }
-    },
-
-    "definitions": {
-      "Components": {
-        "properties": {
-          "components": {
-            "type": "array",
-            "items":{
-                "type":"string"
-            }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Mobile order created successfully"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server error"
           }
         }
       }
     }
-  }
+  },
+  "definitions": {
+    "Components": {
+      "properties": {
+        "components": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000/",
+      "description": "Local Development Server"
+    },
+    {
+      "url": "https://mobilefactory-production.up.railway.app/",
+      "description": "Production Server"
+    }
+  ]
+}
